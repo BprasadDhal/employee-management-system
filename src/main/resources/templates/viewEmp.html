@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Employees</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px;">
+    <nav style="background-color: #333; color: white; padding: 10px; display: flex; justify-content: space-between; align-items: center;">
+   
+        <button onclick="window.history.back();" style="background: none; border: none; color: white; cursor: pointer;">
+            Go Back
+        </button>
+    </nav>
+
+    <div style="max-width: 1000px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h2 style="text-align: center; color: #333;">Employee List</h2>
+        
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+            <thead>
+                <tr style="background-color: #333; color: white;">
+                    <th style="padding: 10px; border: 1px solid #ddd;">Employee ID</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Name</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Age</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Gender</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Email</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Phone</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Department</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="b :${employee}">
+                    <td style="padding: 10px; border: 1px solid #ddd;" th:text="${b.empId}"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;" th:text="${b.name}"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;" th:text="${b.age}"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;" th:text="${b.gender}"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;" th:text="${b.email}"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;" th:text="${b.phone}"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;" th:text="${b.department}"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;" th:text="${b.salary}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
